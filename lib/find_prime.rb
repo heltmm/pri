@@ -3,11 +3,16 @@
 
 def find_prime(num)
   range = (2..num).to_a
-  
-  while range[0] < Math.sqrt(num)
-    range = range.reject {|r| r % x == 0 and r != x}
+  x = 2
+  primes = []
+  while x < Math.sqrt(num)
+    primes.push(x)
+    range.shift
+
+    range = range.reject {|r| r % x == 0 }
+    x = range[0]
   end
-    range
+    primes + range
 end
 
 
