@@ -2,15 +2,10 @@
 
 
 def find_prime(num)
-  range = (2..num)
-  x = 2
-  while x < Math.sqrt(num)
+  range = (2..num).to_a
+  
+  while range[0] < Math.sqrt(num)
     range = range.reject {|r| r % x == 0 and r != x}
-    if x == 2
-      x += 1
-    else
-      x += 2
-    end
   end
     range
 end
