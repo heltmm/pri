@@ -20,12 +20,12 @@ describe('find_prime')do
   #   end
   #   expect(select_prime(200)).to eq(known_primes)
   # end
-
-  it("do")do
+it("do")do
     known_primes = []
-    Prime.each(2000000) do |i|
+    Prime.each(1000000) do |i|
       known_primes.push(i)
     end
+    # puts Benchmark.measure {find_prime(10000000)}
     expect(find_prime(1000000)).to eq(known_primes)
   end
 end
